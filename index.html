@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card</title>
+    <style>
+        .card-container
+        {
+            width: 300px;
+            border: 2px solid #ffcbb3;
+           background-color: #ffeee6;
+           border-radius: 10px;
+        }
+        .product-img
+        {
+            height: 150px;
+            display: block;
+            margin: 0 auto;
+        }
+        .product-title
+        {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .product-price
+        {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .btn-buy-know
+        {
+            background-color: #ff621a;
+            color: white;
+            border: none;
+            padding: 5px 20px;
+            display: block;
+            margin: 10px auto;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .quantity-icon
+        {
+            height: 20px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .quantity-container
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+            
+
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container"  id="card">
+        <img src="scooter1.png" alt="" class="product-img">
+        <h2 class="product-title">Electric Scooter</h2>
+        <p class="product-price">Price: ₹50k</p>
+
+
+       <div class="quantity-container">
+        <img src="minus-button.png" alt="" class="quantity-icon" onclick="dec()"/>
+        <span id="quantity">1</span>
+        <img src="add (2).png" alt="" class="quantity-icon" onclick="inc()"/>
+       </div>
+        <button class="btn-buy-know">Buy Now</button>
+        </div>
+
+        <script>
+            const quantElement = document.getElementById('quantity');
+            function inc()
+            {
+                let quantity = parseInt(quantElement.innerText);
+                quantElement.innerText = ++quantity;
+
+            }
+
+            function dec ()
+            {
+                let quantity =  parseInt(quantElement.innerText);
+                if(quantity > 1){
+                quantElement.innerText = --quantity;
+                }
+
+            }
+        </script>
+   
+</body>
+</html>
